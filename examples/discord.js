@@ -1,7 +1,7 @@
-// npm i discord.js @discordjs/opus ffmpeg-static puppeteer puppeteer-stream
+// npm i discord.js @discordjs/opus ffmpeg-static playwright-core playwright-stream
 // start this script
 const { Client } = require("discord.js");
-const { launch, getStream } = require("puppeteer-stream");
+const { launch, getStream } = require("playwright-stream");
 
 const client = new Client();
 

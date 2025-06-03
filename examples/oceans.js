@@ -1,4 +1,4 @@
-const { launch, getStream } = require("../dist/PuppeteerStream");
+const { launch, getStream } = require("../dist/PlaywrightStream");
 const fs = require("fs");
 const http = require("https");
 

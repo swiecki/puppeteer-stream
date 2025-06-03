@@ -1,23 +1,20 @@
-const { launch, getStream } = require("../dist/PuppeteerStream");
+const { launch, getStream } = require("../dist/PlaywrightStream");
 const fs = require("fs");
 const utils = require("../tests/_utils");
 
-// make sure to install puppeteer-extra & puppeteer-extra-plugin-stealth to use this example
-const puppeteer = require("puppeteer-extra");
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
-
-puppeteer.use(StealthPlugin());
+// Example of using Playwright with custom modifications or plugins if needed
+const playwright = require("playwright-core");
 
 const file = fs.createWriteStream(__dirname + "/test.webm");
 
 async function test() {
-	const browser = await launch(puppeteer, {
-		executablePath: utils.getExecutablePath(),
-		defaultViewport: {
-			width: 1920,
-			height: 1080,
-		},
-	});
+        const browser = await launch({
+                executablePath: utils.getExecutablePath(),
+                defaultViewport: {
+                        width: 1920,
+                        height: 1080,
+                },
+        });
 
 	const page = await browser.newPage();
 	await page.goto("https://www.youtube.com/watch?v=dQw4w9WgXcQ");

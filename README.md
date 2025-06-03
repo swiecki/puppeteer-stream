@@ -1,20 +1,20 @@
-# puppeteer-stream
+# playwright-stream
 
-An Extension for Puppeteer to retrieve audio and/or video streams of a page
+An Extension for Playwright to retrieve audio and/or video streams of a page
 
-<a href="https://www.npmjs.com/package/puppeteer-stream">
-	<img src="https://img.shields.io/npm/v/puppeteer-stream">
+<a href="https://www.npmjs.com/package/playwright-stream">
+        <img src="https://img.shields.io/npm/v/playwright-stream">
 </a>
 
 ## Recording video/audio from video conferencing calls
 
-If you’re looking to use this repo to retrieve video or audio streams from meeting platforms like Zoom, Google Meet, Microsoft Teams, consider checking out [Recall.ai](https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=puppeteer-stream), an API for meeting recording.
+If you’re looking to use this repo to retrieve video or audio streams from meeting platforms like Zoom, Google Meet, Microsoft Teams, consider checking out [Recall.ai](https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=playwright-stream), an API for meeting recording.
 
 ## Installation
 
 ```
-npm i puppeteer-stream
-# or "yarn add puppeteer-stream"
+npm i playwright-stream
+# or "yarn add playwright-stream"
 ```
 
 ## Usage
@@ -24,18 +24,18 @@ npm i puppeteer-stream
 For ES5
 
 ```js
-const { launch, getStream } = require("puppeteer-stream");
+const { launch, getStream } = require("playwright-stream");
 ```
 
 or for ES6
 
 ```js
-import { launch, getStream } from "puppeteer-stream";
+import { launch, getStream } from "playwright-stream";
 ```
 
 ### Launch
 
-The method [`launch(options)`](https://github.com/SamuelScheit/puppeteer-stream/blob/main/src/PuppeteerStream.ts#L16) takes additional to the original [puppeteer launch function](https://github.com/puppeteer/puppeteer/blob/puppeteer-v20.7.2/docs/api/puppeteer.puppeteernode.launch.md), the following options
+The method [`launch(options)`](https://github.com/SamuelScheit/puppeteer-stream/blob/main/src/PlaywrightStream.ts#L16) takes additional to the original [Playwright launch function](https://playwright.dev/docs/api/class-browsertype#browser-type-launch-persistent-context), the following options
 
 ```ts
 {
@@ -45,7 +45,7 @@ The method [`launch(options)`](https://github.com/SamuelScheit/puppeteer-stream/
 }
 ```
 
-and returns a `Promise<`[`Browser`](https://github.com/SamuelScheit/puppeteer-stream/blob/beb7d50dbae8069cd7e42eb17dbe99174c56e3a6/src/PuppeteerStream.ts#L126)`>`
+and returns a `Promise<`[`BrowserContext`](https://github.com/SamuelScheit/puppeteer-stream/blob/main/src/PlaywrightStream.ts#L126)`>`
 
 #### Headless
 
@@ -53,7 +53,7 @@ Works also in headless mode (no gui needed), just set `headless: "new"` in the [
 
 ### Get Stream
 
-The method [`getStream(options)`](https://github.com/SamuelScheit/puppeteer-stream/blob/beb7d50dbae8069cd7e42eb17dbe99174c56e3a6/src/PuppeteerStream.ts#L208) takes the following options
+The method [`getStream(options)`](https://github.com/SamuelScheit/puppeteer-stream/blob/main/src/PlaywrightStream.ts#L208) takes the following options
 
 ```ts
 {
@@ -75,7 +75,7 @@ The method [`getStream(options)`](https://github.com/SamuelScheit/puppeteer-stre
 }
 ```
 
-and returns a `Promise<`[`Readable`](https://github.com/SamuelScheit/puppeteer-stream/blob/beb7d50dbae8069cd7e42eb17dbe99174c56e3a6/src/PuppeteerStream.ts#L288)`>`
+and returns a `Promise<`[`Readable`](https://github.com/SamuelScheit/puppeteer-stream/blob/main/src/PlaywrightStream.ts#L288)`>`
 
 For a detailed documentation of the `mimeType`, `audioBitsPerSecond`, `videoBitsPerSecond`, `bitsPerSecond`, `frameSize` properties have a look at the [HTML5 MediaRecorder Options](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/MediaRecorder) and for the `videoConstraints` and `audioConstraints` properties have a look at the [MediaTrackConstraints](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints).
 
@@ -84,7 +84,7 @@ For a detailed documentation of the `mimeType`, `audioBitsPerSecond`, `videoBits
 ### [Save Stream to File:](/examples/file.js)
 
 ```js
-const { launch, getStream, wss } = require("puppeteer-stream");
+const { launch, getStream, wss } = require("playwright-stream");
 const fs = require("fs");
 
 const file = fs.createWriteStream(__dirname + "/test.webm");
@@ -123,4 +123,4 @@ test();
 
 ### [Stream Spotify](https://www.npmjs.com/package/spotify-playback-sdk-node)
 
-### [Use puppeteer-extra plugins](/examples/puppeteer-extra.js)
+### [Use Playwright](https://playwright.dev/) for automation

@@ -1,5 +1,5 @@
 const utils = require("./_utils");
-const { getStream, launch } = require("../dist/PuppeteerStream");
+const { getStream, launch } = require("../dist/PlaywrightStream");
 const fs = require("fs");
 const child_process = require("child_process");
 

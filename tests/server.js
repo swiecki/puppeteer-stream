@@ -1,6 +1,6 @@
 const utils = require("./_utils");
 const http = require("http");
-const { getStream, launch } = require("../dist/PuppeteerStream");
+const { getStream, launch } = require("../dist/PlaywrightStream");
 
 async function main() {
 	const browser = await launch({

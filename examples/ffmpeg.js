@@ -1,6 +1,6 @@
 // NOTICE: install ffmpeg first
-// const { launch, getStream } = require("puppeteer-stream");
-const { launch, getStream } = require("../dist/PuppeteerStream");
+// const { launch, getStream } = require("playwright-stream");
+const { launch, getStream } = require("../dist/PlaywrightStream");
 const fs = require("fs");
 const { exec } = require("child_process");
 const utils = require("../tests/_utils");
